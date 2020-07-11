@@ -7,7 +7,7 @@
     "start": "ts-node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "knex --knexfile knexfile.js migrate:latest"
   },
   "keywords": [],
   "author": "Lucas de Oliveira Mota",

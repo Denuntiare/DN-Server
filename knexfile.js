@@ -1,4 +1,5 @@
-import path from 'path';
+// import path from 'path';
+const path = require('path');
 
 const sqliteFilename = {
     filename: path.resolve(__dirname, 'database.sqlite'),
