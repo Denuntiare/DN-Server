@@ -1,10 +1,11 @@
 import path from 'path';
 
+const sqliteFilename = {
+    filename: path.resolve(__dirname, 'database.sqlite'),
+}
 module.exports = {
-    client: 'sqlite3',
-    connection: {
-        filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite'),
-    },
+    client: process.env.DB || 'sqlite3',
+    connection: process.env.DATABASE_URL || sqliteFilename,
 
     migrations: {
         directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
@@ -13,6 +14,4 @@ module.exports = {
     seeds: {
         directory: path.resolve(__dirname, 'src', 'database', 'seeds'),
     },
-    
-    useNullAsDefault: true,
 };
