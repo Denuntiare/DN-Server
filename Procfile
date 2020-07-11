@@ -1,1 +1,1 @@
-web:npm run knex:migrate
+web:npm run knex:migrate && ts-node/src/server.ts
