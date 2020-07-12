@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  dndb:
+    container_name: dn-db
+    image: postgres:11.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: dn
+      POSTGRES_PASSWORD: dn
+      POSTGRES_DB: dn
