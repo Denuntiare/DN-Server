@@ -29,6 +29,8 @@ yarn.lock
 
 # Database File
 database.sqlite
+src/database/*.sqlite
+src/database/*.sqlite-*
 
 # dotEnv
 .env
