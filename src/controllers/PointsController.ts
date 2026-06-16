@@ -1,5 +1,6 @@
 import { Request, Response} from 'express';
 import knex from '../database/connection';
+import { getUploadUrl } from '../utils/url';
 
 class PointsController {
 
@@ -21,7 +22,7 @@ class PointsController {
         const serializedPoints = points.map(point => {
             return {
                 ...point,
-                image_url: `http://192.168.0.14:3333/uploads/${point.image}`,
+                image_url: getUploadUrl(request, point.image),
             };
         });
 
@@ -38,7 +39,7 @@ class PointsController {
 
         const serializedPoint = {
                 ...point,
-                image_url: `http://192.168.0.14:3333/uploads/${point.image}`,
+                image_url: getUploadUrl(request, point.image),
         };
 
         const items = await knex('items')
