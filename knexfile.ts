@@ -1,11 +1,8 @@
 import path from 'path';
+import { getDatabaseConfig } from './src/database/config';
 
-const sqliteFilename = {
-    filename: path.resolve(__dirname, 'database.sqlite'),
-}
 module.exports = {
-    client: process.env.DB || 'sqlite3',
-    connection: process.env.DATABASE_URL || sqliteFilename,
+    ...getDatabaseConfig(),
 
     migrations: {
         directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
